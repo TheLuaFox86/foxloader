@@ -41,7 +41,13 @@
             "mnt": "/mnt/Internal0",
             "CS": "GP17",
             "SPI": "SPI0"
+        },
+        "External0": {
+            "type": 1,
+            "CS": "GP20",
+            "mnt": "/mnt/External0",
+            "SPI": "SPI0"
         }
     },
-    "bootables": ["Internal0", "FLASH"]
+    "bootables": ["Internal0", "FLASH", "External0"]
 }

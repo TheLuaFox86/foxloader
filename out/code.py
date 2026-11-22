@@ -94,12 +94,18 @@ def Main():
         def boot(name=flcfg["bootables"][0]):
             for v in bootables:
                 if v["name"] == name:
-                    global __BOOT
-                    __BOOT.update(v)
-                    os.chdir(__BOOT["mnt"])
-                    execfile("FL-CPY_EFI/_BOOT_.py")
+                    reason = "Halted"
+                    try:
+                        global __BOOT
+                        __BOOT.update(v)
+                        os.chdir(__BOOT["mnt"])
+                        execfile("FL-CPY_EFI/_BOOT_.py")
+                    except Exception as e:
+                        reason = "Errored: " + str(e)
+                    
                     time.sleep(2)
-                    title.text = __BOOT["osName"] + " Halted"
+                    title.text = __BOOT["osName"] + " " + reason
+                    print(title.text)
                     status.text = ""
                     display.refresh()
 
