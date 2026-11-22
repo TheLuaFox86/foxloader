@@ -1,9 +1,19 @@
 {
+    "I2C-0": {
+        "MODE": {
+            "type": "func",
+            "index": "STEMMA_I2C"
+        }
+    },
     "SPI0": {
         "CLK": "GP18",
         "MOSI": "GP19",
         "MISO": "GP16",
         "baudrate": 62500000
+    },
+    "input": {
+        "type": 0,
+        "bus": "I2C-0"
     },
     "display": {
         "driver": "ST7789",
@@ -22,6 +32,10 @@
             "type": 0,
             "mnt": "/"
         },
+        "FLASH": {
+            "type": 0,
+            "mnt": "/FLASH"
+        },
         "Internal0": {
             "type": 1,
             "mnt": "/mnt/Internal0",
@@ -29,5 +43,5 @@
             "SPI": "SPI0"
         }
     },
-    "bootables": ["Internal0"]
+    "bootables": ["Internal0", "FLASH"]
 }
