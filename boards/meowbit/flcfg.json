@@ -1,0 +1,28 @@
+{
+    "SPI2": {
+        "MODE": {
+            "type": "direct",
+            "index": "INTERNAL_SPI"
+        }
+    },
+    "display": {
+        "driver": "builtin",
+        "width": 160,
+        "height": 128,
+        "depth": 8,
+        "auto_refresh": false
+    },
+    "filesystems": {
+        "FoxLoader": {
+            "type": 0,
+            "mnt": "/"
+        },
+        "Internal0": {
+            "type": 2,
+            "mnt": "/mnt/Internal0",
+            "index": "SD_CARD"
+        }
+    },
+    "bootables": ["Internal0"]
+    
+}

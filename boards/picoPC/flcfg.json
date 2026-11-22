@@ -1,0 +1,33 @@
+{
+    "SPI0": {
+        "CLK": "GP18",
+        "MOSI": "GP19",
+        "MISO": "GP16",
+        "baudrate": 62500000
+    },
+    "display": {
+        "driver": "ST7789",
+        "CS": "GP13",
+        "SPI": "SPI0",
+        "DC": "GP14",
+        "RST": "GP15",
+        "width": 240,
+        "height": 240,
+        "rowstart": 0,
+        "depth": 16,
+        "auto_refresh": false
+    },
+    "filesystems": {
+        "FoxLoader": {
+            "type": 0,
+            "mnt": "/"
+        },
+        "Internal0": {
+            "type": 1,
+            "mnt": "/mnt/Internal0",
+            "CS": "GP17",
+            "SPI": "SPI0"
+        }
+    },
+    "bootables": ["Internal0"]
+}
